@@ -1,14 +1,33 @@
 alert("¡Bienvenido al promediador de notas!")
 
-var parcial = parseInt(prompt("Ingrese la nota de su parcial"))
+var tp = parseInt(prompt("Ingrese la nota de su primer TP"))
+while(isNaN(tp)){
+    alert("Caracter no valido")
+    tp = parseInt(prompt("Ingrese la nota de su primer TP"))
+}
+
+var parcial = parseInt(prompt("Ingrese la nota de su primer parcial"))
+while(isNaN(parcial)){
+    alert("Caracter no valido")
+    parcial = parseInt(prompt("Ingrese la nota de su primer parcial"))
+}
+
 var final = parseInt(prompt("Ingrese la nota de su final"))
-var promedio = (parcial + final) / 2
+while(isNaN(final)){
+    alert("Caracter no valido")
+    final = parseInt(prompt("Ingrese la nota de su final"))
+}
+
+var promedio
+
 function promediador(){
+    promedio = parseInt((tp + parcial + final) / 5)
     if(promedio >= 6){
-        alert("Felicitaciones cuatrimestre aprobado.")
+        alert(`Felicitaciones cuatrimestre aprobado con ${promedio}`)
     }else{
-        alert("Estas desaprobado, deberas recursar la materia.")
+        alert(`Desaprobaste el cuatrimestre con ${promedio}`)
     }
 }
 
 promediador()
+
